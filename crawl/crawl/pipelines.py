@@ -53,6 +53,6 @@ class SqliteStoreListPipeLine(object):
             self.conn=None
     def create_table(self,filename):
         conn=sqlite3.connect(filename)
-        conn.execute("""create table projectlist (id text,name text,image text,curr_money text,buy_amount text,remain_day text,status text,target_money text,focus_count text,plan_date text,plan_end_date text,time text)""")
+        conn.execute("""create table projectlist (id text primary key,name text,image text,curr_money text,buy_amount text,remain_day text,status text,target_money text,focus_count text,plan_date text,plan_end_date text,time text)""")
         conn.commit()
         return conn
