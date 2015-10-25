@@ -1,0 +1,3 @@
+
+class GetListSpider(scrapy.Spider)
+
