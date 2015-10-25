@@ -31,4 +31,4 @@ class TbListSpider(scrapy.Spider):
             item["focus_count"] = x['focus_count']
             item["plan_date"] = x['plan_date']
             item["plan_end_date"] = x['plan_end_date']
-        yield item
+            yield item
