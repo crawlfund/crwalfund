@@ -9,9 +9,9 @@ import scrapy
 
 
 class GetListItem(scrapy.Item):
-	#项目id后来采集数据需要用到
-	id = scrapy.Field
-	#项目名称
+    #项目id后来采集数据需要用到
+    id = scrapy.Field()
+    #项目名称
     name = scrapy.Field()
     #图片地址
     image = scrapy.Field()
@@ -31,4 +31,9 @@ class GetListItem(scrapy.Item):
     plan_date = scrapy.Field()
     #计划结束时间
     plan_end_date = scrapy.Field()
+
+class CrawlFundItem(scrapy.Item):
+    title  = scrapy.Field()
+    link   = scrapy.Field()
+    addtime= scrapy.Field()
 

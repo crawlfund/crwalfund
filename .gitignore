@@ -1,3 +1,5 @@
 #ignore some
 *.swp
 *.pyc
+*.DS_Store
+*.db

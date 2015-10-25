@@ -6,8 +6,8 @@ import sqlite3
 from os import path
 from scrapy import signals
 from scrapy.xlib.pydispatch import dispatcher
-class SqlitePipeLine(object):
-    filename = 'taobao.db'
+class CrawlPipeline(object):
+                          
     def __init__(self):
         self.conn=None
         dispatcher.connect(self.initialize,signals.engine_started)
