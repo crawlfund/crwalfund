@@ -14,15 +14,15 @@ class TbDetailSpider(scrapy.Spider):
     start_urls = [
         'https://www.taobao.com',    ]
     #Use class construct function to generate start_urls
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         request_urls = 'https://izhongchou.taobao.com/dream/ajax/getProjectForDetail.htm?id='
         conDB = GetlistfromDB()
         conDB.openDB()
         project_id_list = conDB.loadProjectIDList()
-        for x in project_id_list:
-            link = request_urls+x[0]
-            print 'process:',link
-        #self.start_urls = link
+        for i,x in enumerate(project_id_list):
+            self.start_urls.append(request_urls+x[0])
+            print 'process:',self.start_urls[i]
+        #self.start_urls = self.link
         conDB.closeDB()
 
     def parse(self, response):
@@ -58,7 +58,7 @@ class GetlistfromDB:
             self.conn=sqlite3.connect(self.filename)
         else:
             #To do: add error log message
-            pass
+            log.msg("Database not found!", level=log.ERROR)
     def loadProjectIDList(self,):
         cursor = self.conn.cursor()
         cursor.execute('select id from projectlist')
