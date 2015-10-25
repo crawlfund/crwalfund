@@ -63,7 +63,8 @@ NEWSPIDER_MODULE = 'crawl.spiders'
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 #    'crawl.pipelines.SomePipeline': 300,
-     'crawl.pipelines.SqlitePipeLine':300
+#    'crawl.pipelines.SqlitePipeLine':300,
+     'crawl.pipelines.SqliteStoreListPipeLine':300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

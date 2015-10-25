@@ -31,6 +31,8 @@ class GetListItem(scrapy.Item):
     plan_date = scrapy.Field()
     #计划结束时间
     plan_end_date = scrapy.Field()
+    #抓取时间
+    time =scrapy.Field()
 
 class CrawlFundItem(scrapy.Item):
     title  = scrapy.Field()
