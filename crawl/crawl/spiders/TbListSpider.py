@@ -11,7 +11,7 @@ class TbListSpider(scrapy.Spider):
         'https://izhongchou.taobao.com/dream/ajax/getProjectList.htm?page=1&pageSize=10000&projectType=&type=6&status=3&sort=5',    )
 
     def parse(self, response):
-        list=json.loads(response.body_as_unicode())
-        print list
+        getjson=json.loads(response.body_as_unicode(),encoding='utf-8')
+        print getjson
 
         
