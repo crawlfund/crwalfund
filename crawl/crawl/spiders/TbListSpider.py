@@ -15,10 +15,13 @@ class TbListSpider(scrapy.Spider):
     	item = GetListItem()
         getjson = json.loads(response.body_as_unicode())
         for x in getjson['data']:
-            print x['id'],x['name'],x['image'],x['curr_money'],x['buy_amount'],\
-            x['remain_day'],x['status'],x['target_money'],x['focus_count'],\
-            x['plan_date'],x['plan_end_date']
+            for y in x:
+                print y,':',x[y]
 
+            item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
+            item["id"] = x['id']
+
+            '''
             item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
             item["id"] = x['id']
             item["name"] = x['name']
@@ -31,4 +34,5 @@ class TbListSpider(scrapy.Spider):
             item["focus_count"] = x['focus_count']
             item["plan_date"] = x['plan_date']
             item["plan_end_date"] = x['plan_end_date']
+            '''
             yield item

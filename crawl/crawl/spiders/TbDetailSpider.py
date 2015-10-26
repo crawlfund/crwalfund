@@ -3,7 +3,7 @@ import scrapy
 import sys
 import json
 import time
-from crawl.items import GetListItem
+from crawl.items import GetDetailItem
 import sqlite3
 from os import path
 import string
@@ -26,15 +26,11 @@ class TbDetailSpider(scrapy.Spider):
         conDB.closeDB()
 
     def parse(self, response):
-    	item = GetListItem()
-        print 'HAHA'
-        '''
+    	item = GetDetailItem()
         getjson = json.loads(response.body_as_unicode())
         for x in getjson['data']:
-            print x['id'],x['name'],x['image'],x['curr_money'],x['buy_amount'],\
-            x['remain_day'],x['status'],x['target_money'],x['focus_count'],\
-            x['plan_date'],x['plan_end_date']
-
+                
+            '''
             item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
             item["id"] = x['id']
             item["name"] = x['name']
@@ -48,8 +44,7 @@ class TbDetailSpider(scrapy.Spider):
             item["plan_date"] = x['plan_date']
             item["plan_end_date"] = x['plan_end_date']
             yield item
-        '''
-
+            '''
 class GetlistfromDB:
     filename = 'project.db'
     def openDB(self):
