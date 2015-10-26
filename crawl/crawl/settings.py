@@ -64,9 +64,13 @@ NEWSPIDER_MODULE = 'crawl.spiders'
 ITEM_PIPELINES = {
 #    'crawl.pipelines.SomePipeline': 300,
 #    'crawl.pipelines.SqlitePipeLine':300,
-     'crawl.pipelines.SqliteStoreDetailPipeLine':300,
-     'crawl.pipelines.SqliteStoreListPipeLine':300,
+#    'crawl.pipelines.SqliteStoreDetailPipeLine':1,
+     'crawl.pipelines.SqliteStoreListPipeLine':1,
+#    'scrapy.contrib.pipeline.images.ImagesPipeline': 1
 }
+IMAGES_STORE ='../img'#设置图片下载路径
+# 90天的图片失效期限
+IMAGES_EXPIRES = 90
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

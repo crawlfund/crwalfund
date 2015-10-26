@@ -56,7 +56,7 @@ class GetlistfromDB:
             log.msg("Database not found!", level=log.ERROR)
     def loadProjectIDList(self,):
         cursor = self.conn.cursor()
-        cursor.execute('select id from projectlist')
+        cursor.execute('select DISTINCT id from projectlist')
         result = cursor.fetchall()
         return result
     def closeDB(self):

@@ -41,7 +41,7 @@ class SqliteStoreListPipeLine(object):
         dispatcher.connect(self.initialize,signals.engine_started)
         dispatcher.connect(self.finalize,signals.engine_stopped)
     def process_item(self,item,spider):
-        self.conn.execute('insert into projectlist values(?,?,?,?,?,?)',(item['id'],item["name"],item["thumbnail"],item["source"],item["website"],item['time']))
+        self.conn.execute('insert into projectlist values(?,?,?,?,?,?)',(item['id'],item['name'],item['thumbnail'],item['source'],item['website'],item['time']))
         return item
     def initialize(self):
         if path.exists(self.filename):
@@ -55,6 +55,6 @@ class SqliteStoreListPipeLine(object):
             self.conn=None
     def create_table(self,filename):
         conn=sqlite3.connect(filename)
-        conn.execute("""create table projectlist (id text primary key,name text,img text,source text,time text,website text)""")
+        conn.execute("""create table projectlist (id text,name text,thumbnail text,source text,time text,website text)""")
         conn.commit()
         return conn
