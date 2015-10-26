@@ -18,8 +18,12 @@ class TbListSpider(scrapy.Spider):
             for y in x:
                 print y,':',x[y]
 
-            item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
             item["id"] = x['id']
+            item["name"] = x['name']
+            item["thumbnail"] = x['image']
+            item["source"] = "https://izhongchou.taobao.com/dream/ajax/getProjectForDetail.htm?id="+x['id']
+            item["website"] = "taobao"
+            item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
 
             '''
             item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
