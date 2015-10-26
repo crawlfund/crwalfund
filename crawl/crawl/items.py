@@ -11,8 +11,17 @@ import scrapy
 class GetListItem(scrapy.Item):
     #项目id后来采集数据需要用到
     id = scrapy.Field()
+    #项目名称
+    name = scrapy.Field()
+    #缩略图
+    thumbnail = scrapy.Field()
+    #目标项目链接
+    source = scrapy.Field()
     #抓取时间
-    time =scrapy.Field()
+    time = scrapy.Field()
+    #来源网站
+    website = scrapy.Field()
+
 
 class GetDetailItem(scrapy.Item):
     #项目id后来采集数据需要用到
