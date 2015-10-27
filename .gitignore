@@ -5,4 +5,5 @@
 *.db
 *.json
 *.csv
+crawl/crawl/img
 

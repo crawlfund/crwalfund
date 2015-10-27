@@ -4,7 +4,7 @@ import sys
 import json
 import time
 from crawl.items import GetListItem
-
+import urlparse
 class TbListSpider(scrapy.Spider):
     name = "tblistspider"
     allowed_domains = ["taobao.com"]
@@ -20,10 +20,14 @@ class TbListSpider(scrapy.Spider):
 
             item["id"] = x['id']
             item["name"] = x['name']
-            item["thumbnail"] = x['image']
+            #match = pattern.match(x['image'])
+            #print match.group()
+            item["thumbnail"] = x['image'].split('/')[-1]
             item["source"] = "https://izhongchou.taobao.com/dream/ajax/getProjectForDetail.htm?id="+x['id']
             item["website"] = "taobao"
             item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
+            item['image_urls'] =['http:'+x['image']]
+            #item['images']
 
             '''
             item["time"] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())

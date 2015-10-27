@@ -9,6 +9,9 @@ from os import path
 import string
 
 class TbDetailSpider(scrapy.Spider):
+    #use this pipeline
+    pipelines = ['crawl.pipelines.SqliteStoreDetailPipeLine']
+    
     name = "tbdetailspider"
     allowed_domains = ["taobao.com"]
     start_urls = [

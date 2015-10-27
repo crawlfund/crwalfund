@@ -21,6 +21,9 @@ class GetListItem(scrapy.Item):
     time = scrapy.Field()
     #来源网站
     website = scrapy.Field()
+
+    image_urls = scrapy.Field()
+#images =scrapy.Field()
 class GetDetailItem(scrapy.Item):
     #项目id后来采集数据需要用到
     id = scrapy.Field()
@@ -46,8 +49,8 @@ class GetDetailItem(scrapy.Item):
     plan_end_date = scrapy.Field()
     #抓取时间
     time =scrapy.Field()
-'''
-class TumbNailItem(scrapy.item):
+class TumbNailItem(scrapy.Item):
+    #项目id后来采集数据需要用到
     image_urls = scrapy.Field()
+    #项目名称
     images = scrapy.Field()
-'''
