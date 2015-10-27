@@ -4,5 +4,6 @@
 *.db
 *.json
 *.csv
+*.DS_Store
 crawl/crawl/img
 
