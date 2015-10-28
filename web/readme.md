@@ -1,3 +1,6 @@
+/usr/local/lib/python2.7/dist-packages/django
+
+
 $ python -c "import django; print(django.get_version())"
 1.7
 
