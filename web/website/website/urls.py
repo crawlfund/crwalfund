@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^crawlfund',include('crawlfund.urls')),
+    url(r'^crawlfund/',include('crawlfund.urls')),
 ]
