@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Rango says...</h1>
+        hello world! <strong>{{ boldmessage }}</strong><br />
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li><a href = "/index/category/{{category.slug}}" >{{ category.name }}</a></li>
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+         <a href="/index/add_category/">Add a New Category</a><br />
+        <a href="/index/register/">Register</a><br />
+        <a href="/index/about/">About</a><br />
+        {%  load static  %}
+        <img src = "{% static "images/taobao.jpg" %}"  alt ="taobao.jpg" />
+    </body>
+
+</html>
