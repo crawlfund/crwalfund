@@ -84,7 +84,7 @@
                     </div>
 
                 </div>
-
+    <!-- section view-->
     <section style="padding-top: 8%;padding-bottom: 10%;">
         <div class="container">
             <div class="row">
@@ -96,14 +96,48 @@
             </div>
         </div>
     </section>
+
+    <!-- Tab search -->
+    <div class="container">
+            <div class="col-md-12">
+                <a>Sort by:</a>
+                <ul class="nav nav-tabs">
+                    <li><a href="##">TaoBao</a></li>
+                    <li><a href="##">JD</a></li>
+                    <li><a href="##">KickStarter</a></li>
+                    <li><a href="##">Indegogo</a></li>
+                </ul>
+                <ul class="nav nav-tabs">
+                    <li><a href="##">Prefund</a></li>
+                    <li><a href="##">funding</a></li>
+                    <li><a href="##">finish</a></li>
+                </ul>
+                <ul class="nav nav-tabs">
+                    <li><a href="##">Tech</a></li>
+                    <li><a href="##">Art</a></li>
+                    <li><a href="##">Video</a></li>
+                    <li><a href="##">Design</a></li>
+                    <li><a href="##">Game</a></li>
+                    <li><a href="##">Fashion</a></li>
+                    <li><a href="##">Film</a></li>
+                    <li><a href="##">Food</a></li>
+                    <li><a href="##">Music</a></li>
+                </ul>
+            </div>
+    </div>
     <!-- Page Content -->
     <div class="container" >
-
         <div class="row">
-
             <div class="col-md-9">
-                
-
+                <ul class="pagination">
+           <li><a href="#">&laquo;</a></li>
+           <li><a href="#">1</a></li>
+           <li><a href="#">2</a></li>
+           <li><a href="#">3</a></li>
+           <li><a href="#">4</a></li>
+           <li><a href="#">5</a></li>
+           <li><a href="#">&raquo;</a></li>
+        </ul>
                 <div class="row">
                     {% for entry in entries %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
@@ -127,8 +161,17 @@
                     {% else %}
                     {% endfor %}  
                 </div>
-
+                <ul class="pagination">
+           <li><a href="#">&laquo;</a></li>
+           <li><a href="#">1</a></li>
+           <li><a href="#">2</a></li>
+           <li><a href="#">3</a></li>
+           <li><a href="#">4</a></li>
+           <li><a href="#">5</a></li>
+           <li><a href="#">&raquo;</a></li>
+        </ul>
             </div>
+            <!--
             <div class="col-md-3">
                 <nav class="bs-docs-sidebar >
                     <ul class="nav nav-tabs nav-stacked data-spy="affix-" >
@@ -143,10 +186,11 @@
                     </ul>
                 </nav>
             </div>
+            -->
 
         </div>
 
-        </div>
+
 
     </div>
     <!-- /.container -->
