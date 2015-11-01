@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">CrawlFund</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -64,13 +64,13 @@
                                         <h1><strong>Data Driven</strong></h1>
                                         <h2>The Most Large Global Crowd Fund Data Analysis </h2>
                                     </div>
-                                    <div class="slide-image" id="container" ></div>
+                                    <div class="slide-image carousel-inner" id="bar_2" ></div>
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="https://static.kickstarter.com/assets/discover/category-technology-95eb492c0ac7900693d48e9a8bc343abc098549253f569e627d5209086fbe91a.jpg" alt="">
+                                    <div class="slide-image carousel-inner"  id="bar_1" ></div>
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="https://static.kickstarter.com/assets/discover/category-technology-95eb492c0ac7900693d48e9a8bc343abc098549253f569e627d5209086fbe91a.jpg" alt="">
+                                    <div class="slide-image carousel-inner"  id="bar_3" ></div>
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -100,28 +100,34 @@
     <!-- Tab search -->
     <div class="container">
             <div class="col-md-12">
-                <a>Sort by:</a>
+                <h4><strong>Sort by:</strong></h4>
                 <ul class="nav nav-tabs">
+                    <li class="active"><a href="##">All</a></li>
                     <li><a href="##">TaoBao</a></li>
                     <li><a href="##">JD</a></li>
                     <li><a href="##">KickStarter</a></li>
                     <li><a href="##">Indegogo</a></li>
                 </ul>
                 <ul class="nav nav-tabs">
+                    <li class="active"><a href="##">All</a></li>
                     <li><a href="##">Prefund</a></li>
-                    <li><a href="##">funding</a></li>
-                    <li><a href="##">finish</a></li>
+                    <li><a href="##">Funding</a></li>
+                    <li><a href="##">Finish</a></li>
                 </ul>
                 <ul class="nav nav-tabs">
+                    <li class="active"><a href="##">All</a></li>
                     <li><a href="##">Tech</a></li>
+                    <li><a href="##">Comics</a></li>
+                    <li><a href="##">Crafts</a></li>
                     <li><a href="##">Art</a></li>
-                    <li><a href="##">Video</a></li>
+                    <li><a href="##">Film&Video</a></li>
                     <li><a href="##">Design</a></li>
                     <li><a href="##">Game</a></li>
                     <li><a href="##">Fashion</a></li>
-                    <li><a href="##">Film</a></li>
                     <li><a href="##">Food</a></li>
                     <li><a href="##">Music</a></li>
+                    <li><a href="##">Journalism</a></li>
+                    <li><a href="##">Publishing</a></li>
                 </ul>
             </div>
     </div>
@@ -220,11 +226,15 @@
    <!-- for chartjs -->
     <script src="http://cdn.hcharts.cn/jquery/jquery-2.1.4.min.js"></script>
     <script src="http://static.hcharts.cn/highcharts/highcharts.js"></script>
+    <!-- for 3d view-->
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script type="text/javascript">
-    $(function () {
+        <!-- For bar_1 -->
+        $(function () {
     $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
 
-        $('#container').highcharts({
+        $('#bar_1').highcharts({
             chart: {
                 zoomType: 'x'
             },
@@ -281,7 +291,98 @@
         });
     });
 });
+        <!-- For bar_2 -->
+       $(function () {
+    // Set up the chart
+    var chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'bar_2',
+            type: 'column',
+            margin: 75,
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+        },
+        title: {
+            text: 'Chart rotation demo'
+        },
+        subtitle: {
+            text: 'Test options by dragging the sliders below'
+        },
+        plotOptions: {
+            column: {
+                depth: 25
+            }
+        },
+        series: [{
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        }]
+    });
+
+    function showValues() {
+        $('#R0-value').html(chart.options.chart.options3d.alpha);
+        $('#R1-value').html(chart.options.chart.options3d.beta);
+    }
+
+    // Activate the sliders
+    $('#R0').on('change', function () {
+        chart.options.chart.options3d.alpha = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+    $('#R1').on('change', function () {
+        chart.options.chart.options3d.beta = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+
+    showValues();
+});
+        <!-- For bar3 -->
+        $(function () {
+    $('#bar_3').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Contents of Highsoft\'s weekly fruit delivery'
+        },
+        subtitle: {
+            text: '3D donut in Highcharts'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            name: 'Delivered amount',
+            data: [
+                ['Bananas', 8],
+                ['Kiwi', 3],
+                ['Mixed nuts', 1],
+                ['Oranges', 6],
+                ['Apples', 8],
+                ['Pears', 4],
+                ['Clementines', 4],
+                ['Reddish (bag)', 1],
+                ['Grapes (bunch)', 1]
+            ]
+        }]
+    });
+});
     </script>
+
+
 </body>
 
 </html>
