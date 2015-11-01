@@ -6,5 +6,5 @@
 *.csv
 *.DS_Store
 crawl/crawl/img
-web/crawlfund_flask_project/static/
+web/crawlfund_flask_project/static/thumbnail
 
