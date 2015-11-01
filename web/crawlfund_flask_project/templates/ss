@@ -1,0 +1,160 @@
+<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+            <ul class="nav bs-docs-sidenav">
+
+                <li class="">
+  <a href="#glyphicons">Glyphicons 字体图标</a>
+  <ul class="nav">
+    <li class=""><a href="#glyphicons-glyphs">所有可用的图标</a></li>
+    <li class=""><a href="#glyphicons-how-to-use">如何使用</a></li>
+    <li class=""><a href="#glyphicons-examples">实例</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#dropdowns">下拉菜单</a>
+  <ul class="nav">
+    <li class=""><a href="#dropdowns-example">实例</a></li>
+    <li class=""><a href="#dropdowns-alignment">对齐</a></li>
+    <li class=""><a href="#dropdowns-headers">标题</a></li>
+    <li class=""><a href="#dropdowns-divider">分割线</a></li>
+    <li class=""><a href="#dropdowns-disabled">禁用的菜单项</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#btn-groups">按钮组</a>
+  <ul class="nav">
+    <li class=""><a href="#btn-groups-single">基本实例</a></li>
+    <li class=""><a href="#btn-groups-toolbar">按钮工具栏</a></li>
+    <li class=""><a href="#btn-groups-sizing">尺寸</a></li>
+    <li class=""><a href="#btn-groups-nested">嵌套</a></li>
+    <li class=""><a href="#btn-groups-vertical">垂直排列</a></li>
+    <li class=""><a href="#btn-groups-justified">两端对齐排列的按钮组</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#btn-dropdowns">按钮式下拉菜单</a>
+  <ul class="nav">
+    <li class=""><a href="#btn-dropdowns-single">单按钮下拉菜单</a></li>
+    <li class=""><a href="#btn-dropdowns-split">分裂式按钮下拉菜单</a></li>
+    <li class=""><a href="#btn-dropdowns-sizing">尺寸</a></li>
+    <li class=""><a href="#btn-dropdowns-dropup">向上弹出式菜单</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#input-groups">输入框组</a>
+  <ul class="nav">
+    <li class=""><a href="#input-groups-basic">基本实例</a></li>
+    <li><a href="#input-groups-sizing">尺寸</a></li>
+    <li><a href="#input-groups-checkboxes-radios">作为额外元素的多选框和单选框</a></li>
+    <li><a href="#input-groups-buttons">作为额外元素的按钮</a></li>
+    <li><a href="#input-groups-buttons-dropdowns">作为额外元素的按钮式下拉菜单</a></li>
+    <li class=""><a href="#input-groups-buttons-segmented">作为额外元素的分裂式按钮下拉菜单</a></li>
+  </ul>
+</li>
+<li class="active">
+  <a href="#nav">导航</a>
+  <ul class="nav">
+    <li class=""><a href="#nav-tabs">标签页</a></li>
+    <li class="active"><a href="#nav-pills">胶囊式标签页</a></li>
+    <li class=""><a href="#nav-justified">两端对齐</a></li>
+    <li class=""><a href="#nav-disabled-links">禁用的链接</a></li>
+    <li class=""><a href="#nav-dropdowns">添加下拉菜单</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#navbar">导航条</a>
+  <ul class="nav">
+    <li class=""><a href="#navbar-default">默认样式的导航条</a></li>
+    <li class=""><a href="#navbar-brand-image">品牌图标</a></li>
+    <li class=""><a href="#navbar-forms">表单</a></li>
+    <li class=""><a href="#navbar-buttons">按钮</a></li>
+    <li class=""><a href="#navbar-text">文本</a></li>
+    <li class=""><a href="#navbar-links">非导航的链接</a></li>
+    <li class=""><a href="#navbar-component-alignment">组件排列</a></li>
+    <li class=""><a href="#navbar-fixed-top">固定在顶部</a></li>
+    <li class=""><a href="#navbar-fixed-bottom">固定在底部</a></li>
+    <li class=""><a href="#navbar-static-top">静止在顶部</a></li>
+    <li><a href="#navbar-inverted">反色的导航条</a></li>
+  </ul>
+</li>
+<li class=""><a href="#breadcrumbs">路径导航</a></li>
+<li class="">
+  <a href="#pagination">分页</a>
+  <ul class="nav">
+    <li class=""><a href="#pagination-default">默认分页</a></li>
+    <li class=""><a href="#pagination-pager">翻页</a></li>
+  </ul>
+</li>
+<li class=""><a href="#labels">标签</a></li>
+<li class=""><a href="#badges">徽章</a></li>
+<li class=""><a href="#jumbotron">巨幕</a></li>
+<li class=""><a href="#page-header">页头</a></li>
+<li class="">
+  <a href="#thumbnails">缩略图</a>
+  <ul class="nav">
+    <li class=""><a href="#thumbnails-default">默认样式的实例</a></li>
+    <li class=""><a href="#thumbnails-custom-content">自定义内容</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#alerts">警告框</a>
+  <ul class="nav">
+    <li class=""><a href="#alerts-examples">实例</a></li>
+    <li class=""><a href="#alerts-dismissible">可关闭的警告框</a></li>
+    <li class=""><a href="#alerts-links">警告框中的链接</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#progress">进度条</a>
+  <ul class="nav">
+    <li class=""><a href="#progress-basic">基本实例</a></li>
+    <li class=""><a href="#progress-label">带有提示标签的进度条</a></li>
+    <li class=""><a href="#progress-alternatives">根据情境变化效果</a></li>
+    <li class=""><a href="#progress-striped">条纹效果</a></li>
+    <li class=""><a href="#progress-animated">动画效果</a></li>
+    <li class=""><a href="#progress-stacked">堆叠效果</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#media">媒体对象</a>
+  <ul class="nav">
+    <li class=""><a href="#media-default">默认样式</a></li>
+    <li class=""><a href="#media-list">媒体对象列表</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#list-group">列表组</a>
+  <ul class="nav">
+    <li class=""><a href="#list-group-basic">基本实例</a></li>
+    <li class=""><a href="#list-group-badges">徽章</a></li>
+    <li class=""><a href="#list-group-linked">链接</a></li>
+    <li class=""><a href="#list-group-buttons">Button items</a></li>
+    <li class=""><a href="#list-group-disabled">被禁用的条目</a></li>
+    <li class=""><a href="#list-group-contextual-classes">情境类</a></li>
+    <li class=""><a href="#list-group-custom-content">定制内容</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#panels">面板</a>
+  <ul class="nav">
+    <li class=""><a href="#panels-basic">基本实例</a></li>
+    <li class=""><a href="#panels-heading">带标题的面版</a></li>
+    <li class=""><a href="#panels-footer">带注脚的面板</a></li>
+    <li class=""><a href="#panels-alternatives">情境效果</a></li>
+    <li class=""><a href="#panels-tables">带表格的面版</a>
+    </li><li class=""><a href="#panels-list-group">带列表组的面版</a>
+  </li></ul>
+</li>
+<li class=""><a href="#responsive-embed">具有响应式特性的嵌入内容</a></li>
+<li class=""><a href="#wells">Well</a></li>
+
+
+            </ul>
+            <a class="back-to-top" href="#top">
+              返回顶部
+            </a>
+
+            <a href="#" class="bs-docs-theme-toggle" role="button">
+              主题预览
+            </a>
+
+          </nav>
