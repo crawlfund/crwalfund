@@ -1,14 +1,12 @@
 # all the imports
-#import sqlite3
+
 from flask.ext.pymongo import PyMongo
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash
-#For sqlite3
-from contextlib import closing
 
 
 # configuration
-DATABASE = '../../crawl/crawl/spiders/project.db'
+
 DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
@@ -16,37 +14,25 @@ PASSWORD = 'default'
 
 # create our little application :)
 app = Flask(__name__)
-mongo = PyMongo(items)
+app.config['MONGO_DBNAME'] = 'items'
+mongo = PyMongo(app, config_prefix='MONGO')
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 @app.before_request
 def before_request():
-    g.db = connect_db()
+    pass
+
 
 @app.route('/')
 def show_entries():
-    cur = g.db.execute('select DISTINCT * from projectlist')
-    entries = [dict(id=row[0], name=row[1],thumbnail = row[2],source = row[3] ) for row in cur.fetchall()]
-    return render_template('index.html', entries=entries)
+    project = mongo.db.tblist_items.find()
+    return render_template('index.html',entries=project)
 
 @app.teardown_request
 def teardown_request(exception):
-    db = getattr(g, 'db', None)
-    if db is not None:
-        db.close()
-    g.db.close()
+    pass
 
-
-def connect_db():
-    return sqlite3.connect(app.config['DATABASE'])
-
-
-def init_db():
-    with closing(connect_db()) as db:
-        with app.open_resource('schema.sql', mode='r') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
 
 if __name__ == '__main__':
     app.run()
