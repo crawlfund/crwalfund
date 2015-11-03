@@ -16,8 +16,6 @@ from scrapy.exceptions import DropItem
 from scrapy import log
 #from scrapy.pipelines.images.ImagesPipeline import ImagesPipeline
 
-
-
 class MongoPipeline(object):
 
     collection_name = 'tblist_items'
