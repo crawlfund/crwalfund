@@ -2,18 +2,71 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/topics/item-pipeline.html
-import sqlite3
-from os import path
+#import sqlite3
+
 import os
+import re
+import pymongo
+from os import path
 from scrapy import signals
 from scrapy.xlib.pydispatch import dispatcher
-import re
-#from scrapy.pipelines.images.ImagesPipeline import ImagesPipeline
 from scrapy.contrib.pipeline.images import ImagesPipeline
 from scrapy.http import Request
 from scrapy.exceptions import DropItem
 from scrapy import log
+#from scrapy.pipelines.images.ImagesPipeline import ImagesPipeline
 
+class MongoPipeline(object):
+
+    collection_name = 'tblist_items'
+
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_uri=crawler.settings.get('mongodb://127.0.0.1:27019'),
+            mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+        )
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+
+    def close_spider(self, spider):
+        self.client.close()
+
+    def process_item(self, item, spider):
+        self.db[self.collection_name].insert(dict(item))
+        return item
+
+class ThumbNailImagesPipeline(ImagesPipeline):
+    #def file_path(self, request, response=None, info=None):
+    #    image_guid = request.url.split('/')[-1]
+    #    return 'full/%s' % (image_guid)
+    id = ''
+    def get_media_requests(self, item, info):
+        for image_url in item['image_urls']:
+            yield Request(image_url)
+        self.id = item['id']
+                            
+    def item_completed(self, results, item, info):
+        image_paths = [x['path'] for ok, x in results if ok]
+        if not image_paths:
+            raise DropItem("Item contains no images")
+        #if item['id']:
+        #    newname = 'tb_' + item['id'] + '.jpg'
+        #print 'image_paths:',image_paths[0]
+        #os.rename(os.getcwd()+'/../img/'+image_paths[0],os.getcwd()+'/../img/thumbnail/'+newname)
+        #os.mkdir("/tmp/1")
+        #os.rename(image_paths[0], "./img/thumbnail/" + newname)
+        return item
+    def file_path(self, request, response=None, info=None):
+        #open("../img/image_urls.txt","a").write(request.url + "\n")
+        image_guid = request.url.split('/')[-1]
+        return 'thumbnail/%s' % (image_guid)
+'''
 class SqliteStoreDetailPipeLine(object):
     filename = 'project.db'
     def __init__(self):
@@ -69,29 +122,4 @@ class SqliteStoreListPipeLine(object):
         conn.execute("""create table projectlist (id text,name text,thumbnail text,source text,time text,website text)""")
         conn.commit()
         return conn
-
-class ThumbNailImagesPipeline(ImagesPipeline):
-    #def file_path(self, request, response=None, info=None):
-    #    image_guid = request.url.split('/')[-1]
-    #    return 'full/%s' % (image_guid)
-    id = ''
-    def get_media_requests(self, item, info):
-        for image_url in item['image_urls']:
-            yield Request(image_url)
-        self.id = item['id']
-                            
-    def item_completed(self, results, item, info):
-        image_paths = [x['path'] for ok, x in results if ok]
-        if not image_paths:
-            raise DropItem("Item contains no images")
-        #if item['id']:
-        #    newname = 'tb_' + item['id'] + '.jpg'
-        #print 'image_paths:',image_paths[0]
-        #os.rename(os.getcwd()+'/../img/'+image_paths[0],os.getcwd()+'/../img/thumbnail/'+newname)
-        #os.mkdir("/tmp/1")
-        #os.rename(image_paths[0], "./img/thumbnail/" + newname)
-        return item
-    def file_path(self, request, response=None, info=None):
-        #open("../img/image_urls.txt","a").write(request.url + "\n")
-        image_guid = request.url.split('/')[-1]
-        return 'thumbnail/%s' % (image_guid)
+'''

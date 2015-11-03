@@ -65,7 +65,8 @@ ITEM_PIPELINES = {
 #    'crawl.pipelines.SomePipeline': 300,
 #    'crawl.pipelines.SqlitePipeLine':300,
 #    'crawl.pipelines.SqliteStoreDetailPipeLine':1,
-     'crawl.pipelines.SqliteStoreListPipeLine':1,
+     'crawl.pipelines.MongoPipeline':1,
+#    'crawl.pipelines.SqliteStoreListPipeLine':1,
 #    'scrapy.pipelines.images.ImagesPipeline': 1
      'crawl.pipelines.ThumbNailImagesPipeline':2,
 }
