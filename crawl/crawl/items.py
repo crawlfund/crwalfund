@@ -23,10 +23,11 @@ class GetListItem(scrapy.Item):
     website = scrapy.Field()
 
     image_urls = scrapy.Field()
+
 #images =scrapy.Field()
 class GetDetailItem(scrapy.Item):
     name = scrapy.Field()
-    image = scrapy.Field()
+    image_detail = scrapy.Field()
     #开始众筹日期
     begin_date = scrapy.Field()
     #结束日期
@@ -59,7 +60,7 @@ class GetDetailItem(scrapy.Item):
     qrcode = scrapy.Field()
 
 
-class TumbNailItem(scrapy.Item):
+#class TumbNailItem(scrapy.Item):
     #项目id后来采集数据需要用到
     image_urls = scrapy.Field()
     #项目名称
