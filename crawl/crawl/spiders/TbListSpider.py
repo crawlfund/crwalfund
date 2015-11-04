@@ -9,7 +9,7 @@ class TbListSpider(scrapy.Spider):
     name = "tblistspider"
     allowed_domains = ["taobao.com"]
     start_urls = (
-        'https://izhongchou.taobao.com/dream/ajax/getProjectList.htm?page=1&pageSize=10000&projectType=&type=6&status=3&sort=5',    )
+        'https://hstar-hi.alicdn.com/dream/ajax/getProjectList.htm?pageSize=64&projectType=&type=6&status=3&sort=5',    )
 
     def parse(self, response):
     	item = GetListItem()

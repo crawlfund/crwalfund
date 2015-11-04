@@ -25,30 +25,40 @@ class GetListItem(scrapy.Item):
     image_urls = scrapy.Field()
 #images =scrapy.Field()
 class GetDetailItem(scrapy.Item):
-    #项目id后来采集数据需要用到
-    id = scrapy.Field()
-    #项目名称
     name = scrapy.Field()
-    #图片地址
     image = scrapy.Field()
-    #当前筹集到的
-    curr_money = scrapy.Field()
-    #购买人数
-    buy_amount = scrapy.Field()
-    #剩余开始天数
-    remain_day = scrapy.Field()
-    #目前状态
-    status = scrapy.Field()
+    #开始众筹日期
+    begin_date = scrapy.Field()
+    #结束日期
+    end_date = scrapy.Field()
+    #卖家名称
+    nick = scrapy.Field()
     #目标金额
     target_money = scrapy.Field()
-    #喜欢人数
-    focus_count = scrapy.Field()
-    #计划开始时间
+    #支持人数
+    support_person = scrapy.Field()
+    #已筹集金额
+    curr_money = scrapy.Field()
+    #完成比例
+    finish_per = scrapy.Field()
+    #剩余时间
+    remain_day = scrapy.Field()
+    #状态
+    status = scrapy.Field()
+    #预热开始七日
     plan_date = scrapy.Field()
-    #计划结束时间
+    #预热结束日期
     plan_end_date = scrapy.Field()
-    #抓取时间
-    time =scrapy.Field()
+    #描述
+    desc = scrapy.Field()
+    #内容？
+    content = scrapy.Field()
+    #视频地址
+    video = scrapy.Field()
+    #QR码(二维码)
+    qrcode = scrapy.Field()
+
+
 class TumbNailItem(scrapy.Item):
     #项目id后来采集数据需要用到
     image_urls = scrapy.Field()
