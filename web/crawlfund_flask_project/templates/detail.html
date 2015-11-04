@@ -2,11 +2,21 @@
 {% block body %}
 <body>
     <h1>project detail</h1>
+    <div id="myDiv"><h3>Let AJAX change this text</h3></div>
+    <button type="button" onclick="loadXMLDoc()">Change Content</button>
+    <script src="/static/js/jquery.js"></script>
+<p></p>
+<script type="text/javascript">
+function loadXMLDoc()
+{
+    console.log('hello');
+    $.getJSON("/ajax/request",{ id:"123",},function(json){
+        console.log('loadjson');
+        $.each(json, function(i, field) {
+            $("p").append(field + " ");
+        });
+    });
+}
+</script>
 </body>
 {% endblock %}
-<!--
-03097
-35000
-
-53023
-82000
