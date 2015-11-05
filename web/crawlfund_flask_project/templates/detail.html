@@ -5,16 +5,19 @@
     <div id="myDiv"><h3>Let AJAX change this text</h3></div>
     <button type="button" onclick="loadXMLDoc()">Change Content</button>
     <script src="/static/js/jquery.js"></script>
-<p></p>
+<p2></p2>
 <script type="text/javascript">
 function loadXMLDoc()
 {
     console.log('hello');
-    $.getJSON("/ajax/request",{ id:"123",},function(json){
+    $.getJSON("/ajax/getlist",{ id:"123",tag:"5",count:"100"},function(json){
         console.log('loadjson');
-        $.each(json, function(i, field) {
-            $("p").append(field + " ");
-        });
+            for(var i=0;i<json.length;i++)
+            {
+                console.log(i);
+                $("p2").append(json[i].name + json[i].id + "</br>");
+            }
+
     });
 }
 </script>

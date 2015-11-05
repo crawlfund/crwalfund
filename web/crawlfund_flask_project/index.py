@@ -36,18 +36,27 @@ def show_detail():
     project = mongo.db.tblist_items.find()
     return render_template('detail.html',entries=project)
 
-@app.route('/ajax/request', methods=['GET'])
-def detail2json():
+@app.route('/ajax/getlist', methods=['GET'])
+def get_list():
     if request.method == 'GET':
         id = int(request.args.get('id', 10))
-        #tag = int(request.args.get('tag'),0)
-        #count = int(request.args.get('count'),0)
-        results = mongo.db['tblist_items'].distinct("id")#.limit(count)
-        json_results= []
+        tag = int(request.args.get('tag',10))
+        count = int(request.args.get('count',10))
+        if count > 100:
+            count = 100
+        results = mongo.db['tblist_items'].find({'id':{'$gt':'1'}},{'_id':0,'id':1,'name':1,'thumbnail':1,'website':1}).limit(count)
+
+        datalist= []
+        json_results={}
         for result in results:
-            json_results.append(result)
-        print results
-        return json.dumps(json_results)
+            json_results['name']=result['name']
+            json_results['id']=result['id']
+            json_results['thumbnail']=result['thumbnail']
+            json_results['website']=result['website']
+            datalist.append(json_results)
+        print datalist
+        return json.dumps(datalist)
+
 
 @app.teardown_request
 def teardown_request(exception):
