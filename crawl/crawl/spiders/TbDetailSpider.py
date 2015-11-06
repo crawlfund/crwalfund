@@ -11,7 +11,7 @@ from os import path
 
 class TbDetailSpider(scrapy.Spider):
     #use this pipeline
-    pipelines = ['crawl.pipelines.SqliteStoreDetailPipeLine']    
+    pipelines = ['MongoDetailPipeline']    
     name = 'tbdetailspider'
     allowed_domains = ['taobao.com']
     start_urls = []

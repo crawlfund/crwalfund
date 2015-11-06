@@ -16,7 +16,7 @@ from scrapy.exceptions import DropItem
 from scrapy import log
 #from scrapy.pipelines.images.ImagesPipeline import ImagesPipeline
 
-class MongoPipeline(object):
+class MongoListPipeline(object):
 
     collection_name = 'tblist_items'
 
@@ -41,7 +41,33 @@ class MongoPipeline(object):
         self.db[self.collection_name].insert(dict(item))
         return item
 
+class MongoDetailPipeline(object):
+
+    collection_name = 'tbdetail_items'
+
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_uri=crawler.settings.get('mongodb://127.0.0.1:27019'),
+            mongo_db=crawler.settings.get('MONGO_DATABASE', 'items')
+        )
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+
+    def close_spider(self, spider):
+        self.client.close()
+
+    def process_item(self, item, spider):
+        self.db[self.collection_name].insert(dict(item))
+        return item
+
 class ThumbNailImagesPipeline(ImagesPipeline):
+
     #def file_path(self, request, response=None, info=None):
     #    image_guid = request.url.split('/')[-1]
     #    return 'full/%s' % (image_guid)
@@ -66,6 +92,7 @@ class ThumbNailImagesPipeline(ImagesPipeline):
         #open("../img/image_urls.txt","a").write(request.url + "\n")
         image_guid = request.url.split('/')[-1]
         return 'thumbnail/%s' % (image_guid)
+
 '''
 class SqliteStoreDetailPipeLine(object):
     filename = 'project.db'
