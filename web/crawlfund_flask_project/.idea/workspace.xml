@@ -15,7 +15,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/crawlfund_flask_project$crawlfund_flask_project.coverage" NAME="crawlfund_flask_project Coverage Results" MODIFIED="1446216006051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/crawlfund_flask_project$index.coverage" NAME="index Coverage Results" MODIFIED="1446740524317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/crawlfund_flask_project$index.coverage" NAME="index Coverage Results" MODIFIED="1446813891787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -26,12 +26,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.588235">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-              <folding />
+            <state vertical-scroll-proportion="0.5070422">
+              <caret line="329" column="75" selection-start-line="329" selection-start-column="75" selection-end-line="329" selection-end-column="75" />
+              <folding>
+                <element signature="e#80#2186#0#HTML" expanded="false" />
+                <element signature="e#2710#6796#0#HTML" expanded="false" />
+                <element signature="e#6827#7529#0#HTML" expanded="false" />
+                <element signature="e#7567#7706#0#HTML" expanded="false" />
+                <element signature="e#7737#9279#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-7.5">
-              <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -56,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5283019">
-              <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
                 <element signature="e#19#56#0" expanded="true" />
               </folding>
@@ -98,9 +104,9 @@
         <option value="$PROJECT_DIR$/templates/tem.html" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/projectlist.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/detail.html" />
         <option value="$PROJECT_DIR$/index.py" />
+        <option value="$PROJECT_DIR$/templates/detail.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -506,7 +512,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -523,7 +529,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#80#2186#0#HTML" expanded="false" />
+            <element signature="e#2710#6796#0#HTML" expanded="false" />
+            <element signature="e#6827#7529#0#HTML" expanded="false" />
+            <element signature="e#7567#7706#0#HTML" expanded="false" />
+            <element signature="e#7737#9279#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -573,7 +585,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="204" column="26" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="e#80#2186#0#HTML" expanded="false" />
+            <element signature="e#2710#6796#0#HTML" expanded="false" />
+            <element signature="e#6827#7529#0#HTML" expanded="false" />
+            <element signature="e#7567#7706#0#HTML" expanded="false" />
+            <element signature="e#7737#9279#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -613,7 +631,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="306" column="12" selection-start-line="306" selection-start-column="12" selection-end-line="306" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="e#80#2186#0#HTML" expanded="false" />
+            <element signature="e#2710#6796#0#HTML" expanded="false" />
+            <element signature="e#6827#7529#0#HTML" expanded="false" />
+            <element signature="e#7567#7706#0#HTML" expanded="false" />
+            <element signature="e#7737#9279#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -637,7 +661,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#80#2186#0#HTML" expanded="false" />
+            <element signature="e#2710#6796#0#HTML" expanded="false" />
+            <element signature="e#6827#7529#0#HTML" expanded="false" />
+            <element signature="e#7567#7706#0#HTML" expanded="false" />
+            <element signature="e#7737#9279#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -664,18 +694,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.588235">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="e#19#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -688,12 +720,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5283019">
-          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.5070422">
+          <caret line="329" column="75" selection-start-line="329" selection-start-column="75" selection-end-line="329" selection-end-column="75" />
           <folding>
-            <element signature="e#19#56#0" expanded="true" />
+            <element signature="e#80#2186#0#HTML" expanded="false" />
+            <element signature="e#2710#6796#0#HTML" expanded="false" />
+            <element signature="e#6827#7529#0#HTML" expanded="false" />
+            <element signature="e#7567#7706#0#HTML" expanded="false" />
+            <element signature="e#7737#9279#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

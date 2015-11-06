@@ -62,13 +62,9 @@ NEWSPIDER_MODULE = 'crawl.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-#    'crawl.pipelines.SomePipeline': 300,
-#    'crawl.pipelines.SqlitePipeLine':300,
-#    'crawl.pipelines.SqliteStoreDetailPipeLine':1,
     'crawl.pipelines.MongoListPipeline':1,
-#    'crawl.pipelines.SqliteStoreListPipeLine':1,
-#    'scrapy.pipelines.images.ImagesPipeline': 1
-#     'crawl.pipelines.ThumbNailImagesPipeline':2,
+    'crawl.pipelines.MongoDetailPipeline':1,
+    'crawl.pipelines.ThumbNailImagesPipeline':2,
 }
 IMAGES_STORE ='../img'#设置图片下载路径
 # 90天的图片失效期限

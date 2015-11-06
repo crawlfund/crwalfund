@@ -38,6 +38,8 @@ class MongoListPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
+        if spider.name not in ['tblistspider']:
+            return item
         self.db[self.collection_name].insert(dict(item))
         return item
 
@@ -63,6 +65,9 @@ class MongoDetailPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
+        print spider.name
+        if spider.name not in ['tbdetailspider']:
+            return item
         self.db[self.collection_name].insert(dict(item))
         return item
 
@@ -73,20 +78,17 @@ class ThumbNailImagesPipeline(ImagesPipeline):
     #    return 'full/%s' % (image_guid)
     id = ''
     def get_media_requests(self, item, info):
-        for image_url in item['image_urls']:
-            yield Request(image_url)
-        self.id = item['id']
-                            
+        try:
+            for image_url in item['image_urls']:
+                yield Request(image_url)
+            self.id = item['id']
+        except:
+            pass
+    
     def item_completed(self, results, item, info):
         image_paths = [x['path'] for ok, x in results if ok]
         if not image_paths:
             raise DropItem("Item contains no images")
-        #if item['id']:
-        #    newname = 'tb_' + item['id'] + '.jpg'
-        #print 'image_paths:',image_paths[0]
-        #os.rename(os.getcwd()+'/../img/'+image_paths[0],os.getcwd()+'/../img/thumbnail/'+newname)
-        #os.mkdir("/tmp/1")
-        #os.rename(image_paths[0], "./img/thumbnail/" + newname)
         return item
     def file_path(self, request, response=None, info=None):
         #open("../img/image_urls.txt","a").write(request.url + "\n")

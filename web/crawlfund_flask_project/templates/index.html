@@ -264,20 +264,20 @@
             <div class="col-md-9">
                 <ul class="pagination">
            <li><a href="#">&laquo;</a></li>
-           <li><a href="#">1</a></li>
+           <li><a href="#" onclick="loadXMLDoc()">1</a></li>
            <li><a href="#">2</a></li>
            <li><a href="#">3</a></li>
            <li><a href="#">4</a></li>
            <li><a href="#">5</a></li>
            <li><a href="#">&raquo;</a></li>
         </ul>
-                <div class="row">
+                <div class="row" id="project_div">
                     {% for entry in entries %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail" style="height:317px">
                             <img src="/static/thumbnail/{{ entry.thumbnail }}" style="width:250px;height:169px;">
                             <div class="caption">
-                                <h5 style="height:30px; word-wrap:break-word;">{{ entry.name }}</h5>
+                                <h5 style="height:30px; word-wrap:break-word;">aa</h5>
                             </div>
                             <div class="progress center-block" style="height:4%;width: 95%;">
                                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60"
@@ -318,7 +318,21 @@
 
 
     </div>
-    <!-- /.container -->
+    <!-- ajax project load data to container -->
+    <script type="text/javascript">
+    function loadXMLDoc()
+    {
+        console.log('hello');
+        $.getJSON("/ajax/getlist",{ id:"123",tag:"5",count:"10"},function(json){
+            console.log('loadjson');
+                for(var i=0;i<json.length;i++)
+                {
+                   document.getElementById('project_div').innerHTML="<h5 href='http://www.baidu.com'>hello<h5>";
+                }
+
+        });
+    }
+    </script>
 
 </body>
 {% endblock %}
