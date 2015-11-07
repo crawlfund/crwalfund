@@ -252,8 +252,6 @@
                     <li><a href="##">Fashion</a></li>
                     <li><a href="##">Food</a></li>
                     <li><a href="##">Music</a></li>
-                    <li><a href="##">Journalism</a></li>
-                    <li><a href="##">Publishing</a></li>
                 </ul>
             </div>
     </div>
@@ -295,21 +293,22 @@
                     {% endfor %}
                 </div>
                 <ul class="pagination">
-           <li><a href="#">&laquo;</a></li>
-           <li><a href="#">1</a></li>
-           <li><a href="#">2</a></li>
-           <li><a href="#">3</a></li>
-           <li><a href="#">4</a></li>
-           <li><a href="#">5</a></li>
-           <li><a href="#">&raquo;</a></li>
-        </ul>
+                   <li><a href="#">&laquo;</a></li>
+                   <li><a href="#">1</a></li>
+                   <li><a href="#">2</a></li>
+                   <li><a href="#">3</a></li>
+                   <li><a href="#">4</a></li>
+                   <li><a href="#">5</a></li>
+                   <li><a href="#">&raquo;</a></li>
+                </ul>
             </div>
             <nav class="col-sm-3">
-      <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="205">
-        <li class="active"><a href="#section1">Section 1</a></li>
-        <li><a href="#section2">Section 2</a></li>
-        <li><a href="#section3">Section 3</a></li>
-      </ul>
+      <div hidden class="nav nav-tabs nav-stacked" id="edge_chart" data-spy="affix" data-offset-top="300">
+          <h4>Project thumbnail</h4>
+          <div id="bar_4" style="min-width: 200px; height: 200px; margin: 0 auto"></div>
+          <div id="bar_5" style="min-width: 200px; height: 200px; margin: 0 auto"></div>
+
+      </div>
     </nav>
 
 
@@ -327,11 +326,195 @@
             console.log('loadjson');
                 for(var i=0;i<json.length;i++)
                 {
-                    $("#project_div").html('<div class="col-sm-4 col-lg-4 col-md-4"><div class="thumbnail" style="height:317px"><img src="/static/thumbnail/233" style="width:250px;height:169px;"><div class="caption"><h5 style="height:30px; word-wrap:break-word;">aa</h5></div><div class="progress center-block" style="height:4%;width: 95%;"><div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div></div><div class="ratings"><p class="pull-right">15 reviews</p><p></p></div></div></div> ');
+                    $("#project_div").append('<div class="col-sm-4 col-lg-4 col-md-4"><div class="thumbnail" style="height:317px"><img src="/static/thumbnail/233" style="width:250px;height:169px;"><div class="caption"><h5 style="height:30px; word-wrap:break-word;">bb</h5></div><div class="progress center-block" style="height:4%;width: 95%;"><div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div></div><div class="ratings"><p class="pull-right">15 reviews</p><p></p></div></div></div> ');
                  }
 
         });
+
     }
+    <!-- navbar highcharts1 -->
+         $(function () {
+    $('#bar_4').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Contents of Highsoft\'s weekly fruit delivery'
+        },
+        subtitle: {
+            text: '3D donut in Highcharts'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            name: 'Delivered amount',
+            data: [
+                ['Bananas', 8],
+                ['Kiwi', 3],
+                ['Mixed nuts', 1],
+                ['Oranges', 6],
+                ['Apples', 8],
+                ['Pears', 4],
+                ['Clementines', 4],
+                ['Reddish (bag)', 1],
+                ['Grapes (bunch)', 1]
+            ]
+        }]
+    });
+});
+          $(function () {
+    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+
+        $('#bar_5').highcharts({
+            chart: {
+                zoomType: 'x'
+            },
+            title: {
+                text: ' '
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                        'a' : 'a'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Exchange rate'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[9]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    threshold: null
+                }
+            },
+
+            series: [{
+                type: 'area',
+                name: 'USD to EUR',
+                data: data
+            }]
+        });
+    });
+});
+        $(function () {
+    $('#bar_6').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'World\'s largest cities per 2014'
+        },
+        subtitle: {
+            text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Population (millions)'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['Shanghai', 23.7],
+                ['Lagos', 16.1],
+                ['Instanbul', 14.2],
+                ['Karachi', 14.0],
+                ['Mumbai', 12.5],
+                ['Moscow', 12.1],
+                ['São Paulo', 11.8],
+                ['Beijing', 11.7],
+                ['Guangzhou', 11.1],
+                ['Delhi', 11.1],
+                ['Shenzhen', 10.5],
+                ['Seoul', 10.4],
+                ['Jakarta', 10.0],
+                ['Kinshasa', 9.3],
+                ['Tianjin', 9.3],
+                ['Tokyo', 9.0],
+                ['Cairo', 8.9],
+                ['Dhaka', 8.9],
+                ['Mexico City', 8.9],
+                ['Lima', 8.9]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+    $(function(){
+    $(".col-sm-4").mouseover(function(){
+        $("#edge_chart").show();
+        });
+         $(".col-sm-4").mouseout(function(){
+        $("#edge_chart").hide();
+        });
+});
+        $(document).ready(function(){
+  $(".col-sm-4").click(function(){
+    $(this).hide();
+  });
+});
     </script>
 
 </body>
