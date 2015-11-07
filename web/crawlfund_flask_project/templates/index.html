@@ -275,7 +275,7 @@
                         <div class="thumbnail" style="height:317px">
                             <img src="/static/thumbnail/{{ entry.thumbnail }}" style="width:250px;height:169px;">
                             <div class="caption">
-                                <h5 style="height:30px; word-wrap:break-word;">aa</h5>
+                                <h5 style="height:30px; word-wrap:break-word;">{{ entry.name }}</h5>
                             </div>
                             <div class="progress center-block" style="height:4%;width: 95%;">
                                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60"
@@ -319,19 +319,6 @@
     </div>
     <!-- ajax project load data to container -->
     <script type="text/javascript">
-    function loadXMLDoc()
-    {
-        console.log('hello');
-        $.getJSON("/ajax/getlist",{ id:"123",tag:"5",count:"10"},function(json){
-            console.log('loadjson');
-                for(var i=0;i<json.length;i++)
-                {
-                    $("#project_div").append('<div class="col-sm-4 col-lg-4 col-md-4"><div class="thumbnail" style="height:317px"><img src="/static/thumbnail/233" style="width:250px;height:169px;"><div class="caption"><h5 style="height:30px; word-wrap:break-word;">bb</h5></div><div class="progress center-block" style="height:4%;width: 95%;"><div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div></div><div class="ratings"><p class="pull-right">15 reviews</p><p></p></div></div></div> ');
-                 }
-
-        });
-
-    }
     <!-- navbar highcharts1 -->
          $(function () {
     $('#bar_4').highcharts({
@@ -515,6 +502,33 @@
     $(this).hide();
   });
 });
+    </script>
+
+    <script type="text/javascript">
+        $(window).scroll(function() {
+    // When scroll at bottom, invoked getData() function.
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $.getJSON("/ajax/getlist",{ id:"123",tag:"5",count:"10"},function(json){
+                for(var i=0;i<json.length;i++)
+                {
+                    $("#project_div").append('<div class="col-sm-4 col-lg-4 col-md-4"><div class="thumbnail" style="height:317px"><img src="/static/thumbnail/233" style="width:250px;height:169px;"><div class="caption"><h5 style="height:30px; word-wrap:break-word;">'+json[i].name+'</h5></div><div class="progress center-block" style="height:4%;width: 95%;"><div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div></div><div class="ratings"><p class="pull-right">15 reviews</p><p></p></div></div></div>');
+                }
+            });
+        }
+    });
+
+    function loadXMLDoc()
+    {
+        console.log('hello');
+        $.getJSON("/ajax/getlist",{ id:"123",tag:"5",count:"10"},function(json){
+            console.log('loadjson');
+                for(var i=0;i<json.length;i++)
+                {
+                    $("#project_div").append('<div class="col-sm-4 col-lg-4 col-md-4"><div class="thumbnail" style="height:317px"><img src="/static/thumbnail/233" style="width:250px;height:169px;"><div class="caption"><h5 style="height:30px; word-wrap:break-word;">bb</h5></div><div class="progress center-block" style="height:4%;width: 95%;"><div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div></div><div class="ratings"><p class="pull-right">15 reviews</p><p></p></div></div></div>');
+                 }
+
+        });
+    }
     </script>
 
 </body>

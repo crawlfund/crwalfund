@@ -44,7 +44,7 @@ def get_list():
         count = int(request.args.get('count',10))
         if count > 100:
             count = 100
-        results = mongo.db['tblist_items'].find({'id':{'$gt':'1'}},{'_id':0,'id':1,'name':1,'thumbnail':1,'website':1}).limit(count)
+        results = mongo.db['tblist_items'].find({'website':'taobao'},{'_id':0,'id':1,'name':1,'thumbnail':1,'website':1}).limit(count)
         print results.count()
         datalist= []
         json_results={}
