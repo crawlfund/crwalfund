@@ -26,7 +26,10 @@ class GetListItem(scrapy.Item):
 
 #images =scrapy.Field()
 class GetDetailItem(scrapy.Item):
+    id =scrapy.Field()
+    
     name = scrapy.Field()
+    
     image_detail = scrapy.Field()
     #开始众筹日期
     begin_date = scrapy.Field()

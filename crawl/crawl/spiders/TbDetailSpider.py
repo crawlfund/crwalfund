@@ -7,6 +7,7 @@ import string
 from pymongo import MongoClient
 from crawl.items import GetDetailItem
 from os import path
+import re
 
 
 class TbDetailSpider(scrapy.Spider):
@@ -31,7 +32,11 @@ class TbDetailSpider(scrapy.Spider):
     def parse(self, response):
     	item = GetDetailItem()
         getjson = json.loads(response.body_as_unicode())
-
+        #use regular to find id because taobao don't provide id in json
+        pattern = re.compile(r'id=(\d*)')
+        result = pattern.search(response.url)
+        
+        item['id'] = result.group(1)
         item['name'] = getjson['data']['name']
         item['image_detail'] = getjson['data']['image']
         item['begin_date'] = getjson['data']['begin_date']

@@ -30,10 +30,9 @@ def show_entries():
     project = mongo.db.tblist_items.find()
     return render_template('index.html',entries=project)
 
-@app.route('/detail/')
-def show_detail():
-    a = mongo.db.tblist_items.distinct("id")
-    project = mongo.db.tblist_items.find()
+@app.route('/detail/<site>/<id>')
+def show_detail(site,id):
+    project = mongo.db['tblist_items'].find({'id':id},{'_id':0,'id':1,'name':1,'thumbnail':1,'website':1}).limit(1)
     return render_template('detail.html',entries=project)
 
 @app.route('/ajax/getlist', methods=['GET'])
