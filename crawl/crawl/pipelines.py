@@ -93,7 +93,7 @@ class ThumbNailImagesPipeline(ImagesPipeline):
     def file_path(self, request, response=None, info=None):
         #open("../img/image_urls.txt","a").write(request.url + "\n")
         image_guid = request.url.split('/')[-1]
-        return 'thumbnail/%s' % (image_guid)
+        return '../../../web/crawlfund_flask_project/static/thumbnail/%s' % (image_guid)
 
 '''
 class SqliteStoreDetailPipeLine(object):
