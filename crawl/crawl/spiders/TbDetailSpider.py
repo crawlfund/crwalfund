@@ -8,6 +8,7 @@ from pymongo import MongoClient
 from crawl.items import GetDetailItem
 from os import path
 import re
+import time
 
 
 class TbDetailSpider(scrapy.Spider):
@@ -38,6 +39,7 @@ class TbDetailSpider(scrapy.Spider):
         
         item['id'] = result.group(1)
         item['name'] = getjson['data']['name']
+        item['time'] = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
         item['image_detail'] = getjson['data']['image']
         item['begin_date'] = getjson['data']['begin_date']
         item['end_date'] = getjson['data']['end_date']

@@ -29,6 +29,8 @@ class GetDetailItem(scrapy.Item):
     id =scrapy.Field()
     
     name = scrapy.Field()
+    #当前爬取时间
+    time = scrapy.Field()
     
     image_detail = scrapy.Field()
     #开始众筹日期
