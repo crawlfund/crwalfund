@@ -8,13 +8,6 @@
 
     <div class="container" >
         <div class="row">
-            <div class="col-md-5">
-                <div id="main_line" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-            </div>
-
-            <div class="col-md-4">
-                <div id="main_bar" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-            </div>
             <div class="col-md-3">
                 <div class="thumbnail">
                     <img src="/static/thumbnail/{{ entries.thumbnail }}" >
@@ -24,9 +17,23 @@
                 <h2>支持人数:200</h2>
                 <h2>支持金额:2000,00</h2>
             </div>
+
+
+            <div class="col-md-4">
+                <div id="main_bar" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+            </div>
+            <div class="col-md-5">
+                <div id="main_line" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            </div>
         </div>
     </div>
+    <div class="container">
+    <!--命运的分割线-->
+    <hr>
+        <div id="weekly_bar">
 
+            </div>
+    </div>
      <!-- ECharts单文件引入 -->
 	<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
     <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
@@ -90,7 +97,7 @@
          var main_line = echarts.init(document.getElementById('main_line'));
         main_line.setOption(option);
      });
-    $(function() {
+     $(function() {
         option = {
             title: {
                 text: '某站点用户访问来源',
@@ -126,6 +133,10 @@
         var main_bar = echarts.init(document.getElementById('main_bar'));
         main_bar.setOption(option);
     });
+
+
+
+
     </script>
 
 </body>
