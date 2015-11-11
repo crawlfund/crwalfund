@@ -1,0 +1,4 @@
+# m h  dom mon dow   command
+*/30 *    * * *      sh /home/LuYang/EulerFunding/EulerFunding/EulerFunding/shell/scrapy
+*/15 *    * * *      sh /home/wwwroot/crawl.wellmakers.com/crwalfund/crawl/script/scrapy_detail_task.sh
+0    */1  * * *      sh /home/wwwroot/crawl.wellmakers.com/crwalfund/crawl/script/scrapy_list_task.sh
