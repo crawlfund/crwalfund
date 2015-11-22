@@ -33,7 +33,7 @@ def show_entries():
 @app.route('/detail/<site>/<id>')
 def show_detail(site,id):
     project = mongo.db.tblist_items.find({'id':id},{'_id':0,'id':1,'name':1,'thumbnail':1,'website':1}).limit(1)
-    detail = mongo.db.tbdetail_items.find({'id':id}).sort({})
+   
     for result in project:
         print result
     return render_template('detail.html',entries=result)
@@ -62,4 +62,4 @@ def teardown_request(exception):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=9091)
+    app.run(host='0.0.0.0',port=5000)
